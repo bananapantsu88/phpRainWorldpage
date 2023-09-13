@@ -1,0 +1,208 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: 'rodondo', sans-serif;
+}
+
+header {
+    background-image: url('img/headline.jpg');
+    background-size: cover;
+    text-align: center;
+    padding: 64px 0;
+}
+
+h1 {
+    font-size: 128px;
+}
+
+h2 {
+    font-size: 36px;
+}
+
+h3 {
+    font-size: 28px;
+}
+
+pre {
+    font-family: 'rodondo';
+    font-size: 28px;
+}
+
+nav {
+    text-align: right;
+    padding: 18px 0;
+    font-size: 24px;
+    overflow: hidden;
+    background-color: #111;
+}
+
+.a-nav {
+    color: white;
+    text-decoration: none;
+    margin-right: 24px;
+}
+
+#videocult {
+    float: left;
+    max-height: 32px;
+    margin-left: 10px;
+    margin-right: 24px;
+}
+
+section {
+    text-align: center;
+    padding: 32px 0;
+    font-family: 'rodondo', sans-serif;
+}
+
+table {
+    width: 100%;
+    font-size: 24px;
+    border-collapse: collapse;
+}
+
+#td-section3 {
+    text-align: left;
+}
+
+.td-section4 {
+    width: 25%;
+    text-align: center;
+}
+
+footer {
+    background-color: #111;
+    text-align: center;
+    font-size: 20px;
+}
+
+/* FORM */
+
+#section-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#table-form {
+    font-size: 28px;
+    border-collapse: collapse;
+}
+
+input {
+    font-size: 28px;
+    font-family: 'rodondo';
+}
+
+.tr-form {
+    height: 100px;
+    text-align: left;
+}
+
+.a-footer {
+    color: #3e8bff;
+}
+
+/* Who we are */
+
+.Sections {
+    float: left;
+    width: 96.4%;
+    padding: 24px;
+    border: 10px solid #333;
+    background-color: black;
+}
+
+.Section-2-left {
+    float: left;
+    width: 67%;
+    margin: 20px;
+    border: 5px solid #555;
+    padding: 24px;
+    background-color: #111;
+}
+
+.Section-2-right {
+    float: left;
+    width: 25%;
+    margin-left: 44px;
+}
+
+.Section-2   {
+    float: left;
+    width: 80%;
+    margin: 20px;
+    text-align: center;
+    border: 5px solid #555;
+    padding: 24px;
+    background-color: #111;
+}
+
+.separacion {
+    float: left;
+    width: 100%;
+    padding: 24px;
+    background-color: black;
+}
+
+#h2WWA {
+    font-family: 'rodondo';
+    font-size: 54px;
+}
+
+#pWWA {
+    font-family: 'rodondo';
+    font-size: 32px;
+}
+
+.Section-3 {
+    float: left;
+    width: 18%;
+    margin: 34px;
+    text-align: center;
+    border: 5px solid #555;
+    padding: 24px;
+    background-color: #111;
+}
+
+.Section-4 {
+    float: left;
+    width: 46%;
+    margin-left: 20px;  
+    padding: 24px;
+}
+
+.Section-5 {
+    float: left;
+    margin: 20px;
+    padding: 20px;
+}
+
+.Section-footer {
+    float: left;
+    width: 96.4%; 
+    padding: 24px;
+    border: 10px solid #333;
+}
+
+.div-footer {
+    float: left;
+    width: 28%;
+    margin: 20px;
+    padding: 24px;
+}
+
+.entry-footer {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+textarea {
+    font-family: rodondo;
+    font-size: 24px;
+}
+
+#contact {
+    text-align: center;
+    font-size: 20px;
+}
