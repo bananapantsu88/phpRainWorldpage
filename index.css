@@ -18,6 +18,10 @@ a {
     text-decoration: none;
 }
 
+a img {
+    border-radius: 50%;
+}
+
 /* ----- BARRA DE NAVEGACIÓN ----- */
 nav {
     background-color: #111;
@@ -66,12 +70,12 @@ header {
 .Seccion-2 {
     margin: auto;
     text-align: center;
-    width: 90%;
+    width: 91%;
 }
 
 .Seccion-2-left {
     float: left;
-    width: 60%;
+    width: 66%;
     background-color: #111;
     border: solid 10px #333;
     margin: 12px;
@@ -85,6 +89,7 @@ header {
     text-align: center;
     background-color: #111;
     border: solid 10px #333;
+    margin-bottom: 24px;
 }
 
 .image {
@@ -117,17 +122,10 @@ header {
     background-color: #111;
 }
 
-#Seccion-3-izq {
+.subSeccion-3 {
     padding: 24px;
-}
-
-#Seccion-3-der {
-    padding: 24px;
-}
-
-#Seccion-3-der p {
-    text-align: left;
-    padding: 24px;
+    margin: auto;
+    width: 50%;
 }
 /* ----- FIN DE SECCION 3 ----- */
 
@@ -137,7 +135,7 @@ header {
     margin-top: 36px;
     background-color: #222;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(33.33%, 1fr));
     padding-bottom: 24px;
     text-align: center;
 }
