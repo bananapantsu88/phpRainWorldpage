@@ -30,16 +30,22 @@ nav {
 nav a {
     color: white;
     margin-left: 24px;
+    margin-right: 24px;
 }
 
-nav img {
-    max-height: 48px;
-    margin-left: 24px;
+a {
+    font-size: 32px;
+    text-decoration: none;
 }
 
-.nav-links {
-    margin-left: auto;
+nav div {
+    margin: auto;
 }
+
+img {
+    border-radius: 15%;
+}
+
 /* ----- FIN DE BARRA DE NAVEGACIÓN ----- */
 
 /* ----- ENCABEZADO ----- */
@@ -103,7 +109,7 @@ input {
     margin-top: 36px;
     background-color: #222;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(33.33%, 1fr));
     padding-bottom: 24px;
     text-align: center;
 }
