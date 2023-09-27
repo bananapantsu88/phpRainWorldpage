@@ -1,0 +1,25 @@
+$colorW: white;
+$Mainbg: black;
+$bg-1: #111;
+$bg-2: #222;
+$bg-3: #333;
+
+body {
+    background-color: $Mainbg;
+    color: $colorW;
+    font-family: 'rodondo', sans-serif;
+}
+
+h2 {
+    font-size: 36px;
+    text-align: center;
+}
+
+p {
+    font-size: 24px;
+}
+
+a {
+    font-size: 32px;
+    text-decoration: none;
+}
