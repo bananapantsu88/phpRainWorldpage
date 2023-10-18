@@ -1,5 +1,5 @@
 body {
-    background-color: black;
+    background-color: #000000;
     color: white;
     font-family: 'rodondo', sans-serif;
 }
@@ -58,3 +58,59 @@ button{
     color: white;
     background-color: black;
 }
+
+/*
+.rain {
+    background: url(img/Rain-2.png);
+    height: 100%;
+    width: 100%;
+    animation: rain .5s linear infinite;
+}
+
+.rain:before
+{
+    content: '';
+    position: absolute;
+    background-repeat: repeat;
+    background: #fff;
+    animation: lighting 2s linear infinite;
+    opacity: 0;
+}
+
+@keyframes rain
+{
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 0% 100%;
+    }
+}
+
+@keyframes lighting {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 0;
+    }
+    11% {
+        opacity: 1;
+    }
+    14% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 0;
+    }
+    21% {
+        opacity: 1;
+    }
+    24% {
+        opacity: 0;
+    }
+    104% {
+        opacity: 0;
+    }
+}
+*/

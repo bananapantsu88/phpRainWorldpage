@@ -1,0 +1,18 @@
+i {
+    position: absolute;
+    height: 200px;
+    background: linear-gradient(transparent, #fff);
+    border-bottom-left-radius: 1px;
+    border-bottom-right-radius: 1px;
+    animation: animate 1s linear infinite;
+    z-index: -100;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(70px);
+    }
+    100% {
+        transform: translateY(280vh);
+    }
+}
