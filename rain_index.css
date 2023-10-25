@@ -13,6 +13,6 @@ i {
         transform: translateY(70px);
     }
     100% {
-        transform: translateY(220vh);
+        transform: translateY(200vh);
     }
 }

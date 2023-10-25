@@ -1,15 +1,21 @@
 <?php
+    include("connection.php");
+    $connection = connect();
 
-include("conection.php");
+    $name     = $_POST['nombre'];
+    $lname    = $_POST['apellido'];
+    $sex      = $_POST['sexo'];
+    $date     = $_POST['fecha_nacimiento'];
+    $email    = $_POST['email'];
+    $username = $_POST['usuario'];
+    $password = $_POST['contrasenia'];
+    $comment  = $_POST['comentario'];
 
-$name = "pepe";
-$lname = "rivas";
-$sex = "male";
-$date = "2020-10-20";
-$email = "pepe@gmail.com";
-$username = "pepitox";
-$password = "1234";
-
-mysqli_query($conection, "INSERT INTO usuarios (nombre, apellido, sexo, fecha_nacimiento, email, usuario, contrasenia) VALUES ('$name','$lname','$sex','$date','$email','$username','$password')");
-
+    $sql = "INSERT INTO usuarios (nombre, apellido, sexo, fecha_nacimiento, email, usuario, contrasenia, comentario) VALUES ('$name','$lname','$sex','$date','$email','$username','$password','$comment')";
+    $query = mysqli_query($connection, $sql); 
+    
+    if ($query) {
+        Header ("Location: form.php");
+    } else {
+    }
 ?>

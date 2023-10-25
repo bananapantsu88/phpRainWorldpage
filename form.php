@@ -23,7 +23,7 @@
                 let delay = Math.random() * -20;
                 let duration = Math.random() * 1;
 
-                drop.style.width = 0.2 + size+'px';
+                drop.style.width = size+'px';
                 drop.style.left = posX + 'px';
                 drop.style.animationDelay = delay+'s';
                 drop.style.animationDuration = 1+ duration+'s';
@@ -134,18 +134,18 @@
     </div>
 
     <div class="container">
-        <form class="needs-validation" novalidate="">
+        <form action="create.php" class="needs-validation" novalidate="" method="POST">
             <div class="row mx-auto">
                 <div class="col">
                     <label for="firstName" class="form-label"></label>
-                    <input type="text" class="form-control" id="firstName" placeholder="First name" value="" required="">
+                    <input type="text" class="form-control" id="firstName" name="nombre" placeholder="First name" value="" required="">
                     <div class="invalid-feedback">
                         Valid first name is required.
                     </div>
                 </div>
                 <div class="col">
                     <label for="lastName" class="form-label"></label>
-                    <input type="text" class="form-control" id="lastName" placeholder="Last name" value="" required="">
+                    <input type="text" class="form-control" id="lastName" name="apellido" placeholder="Last name" value="" required="">
                     <div class="invalid-feedback">
                         Valid last name is required.
                     </div>
@@ -155,7 +155,7 @@
                 <label for="username" class="form-label"></label>
                 <div class="input-group has-validation">
                     <span class="input-group has-validation">
-                        <input type="text" class="form-control" id="username" placeholder="Username" required="">
+                        <input type="text" class="form-control" id="username" name="usuario" placeholder="Username" required="">
                         <div class="invalid-feedback">
                             Your username is required.
                         </div>
@@ -167,7 +167,7 @@
                 <label for="password" class="form-label"></label>
                 <div class="input-group has-validation">
                     <span class="input-group has-validation">
-                        <input type="password" class="form-control" id="password" placeholder="Password" required="">
+                        <input type="password" class="form-control" id="password" name="contrasenia" placeholder="Password" required="">
                         <div class="invalid-feedback">
                             Your Password is required.
                         </div>
@@ -175,23 +175,52 @@
                 </div>
             </div>
 
+            <div class = "row my-4 mx-auto">
+                <div class="col">
+                    <div class="row">
+                        <div class="col"> <h5>Gender</h5> </div>
+                        <div class="col">
+                            <input type="radio" id="male" name="sexo" value="male">
+                            <label for="male">Male</label>
+
+                            <input type="radio" id="female" name="sexo" value="female">
+                            <label for="female">Female</label>
+
+                            <input type="radio" id="other" name="sexo" value="other">
+                            <label for="other">Other</label>
+                            <div class="invalid-feedback">
+                                Valid first name is required.
+                            </div>
+                        </div>
+                        <div class="col"> <h5>Birth Date</h5> </div>
+                        <div class="col">
+                            <label for="fecha"></label>
+                            <input type="date" id="fecha" name="fecha_nacimiento">
+                            <div class="invalid-feedback">
+                                Valid first name is required.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="row my-4 mx-3">
                 <label for="email" class="form-label"></label>
-                <input type="email" class="form-control" id="email" placeholder="Email: you@example.com">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email: you@example.com">
                 <div class="invalid-feedback">
-                    Please enter a valid email address for shipping updates.
+                    Please enter a valid email.
                 </div>
             </div>
             <div class="row my-4 mx-3">
                 <label for="comment" class="form-label"></label>
-                <textarea class="form-control" id="email" placeholder="Please add a comment about your opinion about the game"></textarea>
+                <textarea class="form-control" id="email" name="comentario" placeholder="Please add a comment about your opinion about the game"></textarea>
                 <div class="invalid-feedback">
-                    Please enter a valid email address for shipping updates.
+                    Please enter a valid comment.
                 </div>
             </div>
             <hr class="my-4">
             <div class="row col-1 mx-auto mb-4">
-                <button style="font-size: 32px;" class="btn-1" type="submit">SIGN IN</button>
+                <button style="font-size: 32px;" class="btn-1 btn-primary" type="submit">SIGN IN</button>
             </div>
         </form>
     </div>

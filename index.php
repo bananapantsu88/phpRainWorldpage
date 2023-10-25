@@ -19,7 +19,7 @@
                 let drop = document.createElement('i');
 
                 let size = Math.random() * 2;
-                let posX = Math.floor(Math.random() * window.innerWidth);
+                let posX = Math.floor(Math.random() * (window.innerWidth - 10));
                 let delay = Math.random() * -20;
                 let duration = Math.random() * 1;
 
@@ -75,7 +75,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-outline-light mt-2" data-bs-dismiss="modal">Log in</button>
-                    <a href="form.html"><button type="button" class="btn btn-outline-light">Sign-up</button></a>
+                    <a href="form.php"><button type="button" class="btn btn-outline-light">Sign-up</button></a>
                 </div>
             </div>
         </div>
@@ -167,7 +167,7 @@
             <div class="col">
                 <h2>Would you like to sign my petition?</h2>
                 <p class="text-center">Hi there, If you wanna express Sign here to let people know you love rain world the same as me!</p>
-                <div class="text-center"><a href="form.html"><button class="btn-1">Sign here</button></a></div>
+                <div class="text-center"><a href="form.php"><button class="btn-1">Sign here</button></a></div>
             </div>
             <div class="col">
                 <h2>Are you curious who is behind this website?</h2>
