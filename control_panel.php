@@ -5,7 +5,7 @@
     $sql = "SELECT * FROM usuarios";
     $query = mysqli_query($connection, $sql);
 
-    $row = mysqli_fetch_array($query);
+#       $row = mysqli_fetch_array($query);
 ?>
 
 <!DOCTYPE html>
@@ -76,41 +76,38 @@
 
     <div class="container-fluid mt-4 text-center" style="background-color: #111; border: solid 10px #222">
         <div class="row">
-            <div class="col py-4" style=" border: solid 10px #222"><h5>Id        </h5></div>
-            <div class="col py-4" style=" border: solid 10px #222"><h5>Name      </h5></div>
-            <div class="col py-4" style=" border: solid 10px #222"><h5>Last Name </h5></div>
-            <div class="col py-4" style=" border: solid 10px #222"><h5>Sex       </h5></div>
-            <div class="col py-4" style=" border: solid 10px #222"><h5>Birth Date</h5></div>
-            <div class="col py-4" style=" border: solid 10px #222"><h5>Email     </h5></div>
-            <div class="col py-4" style=" border: solid 10px #222"><h5>User Name </h5></div>
-            <div class="col py-4" style=" border: solid 10px #222"><h5>Password  </h5></div>
-            <div class="col py-4" style=" border: solid 10px #222"><h5>Comment   </h5></div>
-            <div class="col py-4" style=" border: solid 10px #222"><h5>Options   </h5></div>
+            <div class="col py-4" style=" border-bottom: solid 10px #222"><h5>Id        </h5></div>
+            <div class="col py-4" style=" border-bottom: solid 10px #222"><h5>Name      </h5></div>
+            <div class="col py-4" style=" border-bottom: solid 10px #222"><h5>Last Name </h5></div>
+            <div class="col py-4" style=" border-bottom: solid 10px #222"><h5>Sex       </h5></div>
+            <div class="col py-4" style=" border-bottom: solid 10px #222"><h5>Birth Date</h5></div>
+            <div class="col py-4" style=" border-bottom: solid 10px #222"><h5>Email     </h5></div>
+            <div class="col py-4" style=" border-bottom: solid 10px #222"><h5>User Name </h5></div>
+            <div class="col py-4" style=" border-bottom: solid 10px #222"><h5>Password  </h5></div>
+            <div class="col py-4" style=" border-bottom: solid 10px #222"><h5>Comment   </h5></div>
+            <div class="col py-4" style=" border-bottom: solid 10px #222"><h5>Options   </h5></div>
         </div>
+        <?php
+            while($row = mysqli_fetch_array($query)){
+        ?>
         <div class = "row">
-            <?php
-                while($row = mysqli_fetch_array($query)){
-            ?>
-                <div class = "col py-4"><?php echo $row['id']              ?></div>
-                <div class = "col py-4"><?php echo $row['nombre']          ?></div>
-                <div class = "col py-4"><?php echo $row['apellido']        ?></div>
-                <div class = "col py-4"><?php echo $row['sexo']            ?></div>
-                <div class = "col py-4"><?php echo $row['fecha_nacimiento']?></div>
-                <div class = "col py-4"><?php echo $row['email']           ?></div>
-                <div class = "col py-4"><?php echo $row['usuario']         ?></div>
-                <div class = "col py-4"><?php echo $row['contrasenia']     ?></div>
-                <div class = "col py-4"><?php echo $row['comentario']      ?></div>
-            <?php
-                }
-            ?>
+            <div class = "col py-4"><?php echo $row['id']              ?></div>
+            <div class = "col py-4"><?php echo $row['nombre']          ?></div>
+            <div class = "col py-4"><?php echo $row['apellido']        ?></div>
+            <div class = "col py-4"><?php echo $row['sexo']            ?></div>
+            <div class = "col py-4"><?php echo $row['fecha_nacimiento']?></div>
+            <div class = "col py-4"><?php echo $row['email']           ?></div>
+            <div class = "col py-4"><?php echo $row['usuario']         ?></div>
+            <div class = "col py-4"><?php echo $row['contrasenia']     ?></div>
+            <div class = "col py-4"><?php echo $row['comentario']      ?></div>
             <div class = "col py-4">
-                <a href="update.php?id=<?php # echo $row['id']?>" class="btn btn-outline-light" style="font-size: 16px">Edit</a>
-                <a href="delete.php?id=<?php # echo $row['id']?>" class="btn btn-outline-light"  style="font-size: 16px">Delete</a>
-            </div> 
-            
+                <a href="update.php?id=<?php  echo $row['id']?>" class="btn btn-outline-light" style="font-size: 16px">Edit</a>
+                <a href="delete.php?id=<?php  echo $row['id']?>" class="btn btn-outline-light"  style="font-size: 16px">Delete</a>
+            </div>
         </div>
+        <?php
+            }
+        ?>
     </div>
-
-
 </body>
 </html>

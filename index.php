@@ -19,7 +19,7 @@
                 let drop = document.createElement('i');
 
                 let size = Math.random() * 2;
-                let posX = Math.floor(Math.random() * (window.innerWidth - 10));
+                let posX = (Math.floor(Math.random() * (window.innerWidth - 10))) - 10;
                 let delay = Math.random() * -20;
                 let duration = Math.random() * 1;
 
@@ -48,34 +48,128 @@
     </nav>
 
     <!-- Modal -->
-    <div class="modal fade" id="Login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="color: white">
+    <div class="modal fade" id="Login" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true" style="color: white">
         <div class="modal-dialog">
-            <div class="modal-content"  style="background-color: #222;">
+            <div class="modal-content" style="background-color: #222;">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel"> Login </h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel"> Register your info </h1>
                     <button type="button" class="btn-close white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+                <ul class="nav text-center py-2" id="myTabs" role="tablist" style="border-bottom: white solid 1px;">
+                    <li class="nav-item col">
+                        <a class="nav-link active" style="color: white;" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Login</a>
+                    </li>
+                    <li class="nav-item col">
+                        <a class="nav-link" style="color: white;" id="sign-in-tab" data-toggle="tab" href="#sign-in" role="tab" aria-controls="sign-in" aria-selected="false">Sign In</a>
+                    </li>
+                </ul>
+
                 <div class="modal-body">
-                    <form action="#" method="post">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col">
-                                    <label for="username" class="form-label"></label>
-                                    <input type="text" class="form-control" id="username" placeholder="Username*" required="">
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                            <form action="login.php" method="get">
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="username" class="form-label"></label>
+                                        <input type="text" class="form-control" id="username" name="usuario" placeholder="Username*" required>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col">
-                                    <label for="password" class="form-label"></label>
-                                    <input type="password" class="form-control" id="password" placeholder="Password*" required="">
+                                <div class="row mb-4 pb-3">
+                                    <div class="col">
+                                        <label for="password" class="form-label"></label>
+                                        <input type="password" class="form-control" id="password" name="contrasenia" placeholder="Password*" required>
+                                    </div>
                                 </div>
-                            </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-outline-light mt-2">Log in</button>
+                                </div>
+                            </form>
                         </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-light mt-2" data-bs-dismiss="modal">Log in</button>
-                    <a href="form.php"><button type="button" class="btn btn-outline-light">Sign-up</button></a>
+                        <div class="tab-pane fade" id="sign-in" role="tabpanel" aria-labelledby="sign-in-tab">
+                            <form action="create.php" class="needs-validation" novalidate="" method="GET">
+                                <div class="row mx-auto">
+                                    <div class="col">
+                                        <label for="firstName" class="form-label"></label>
+                                        <input type="text" class="form-control" id="firstName" name="nombre" placeholder="First name" value="" required="true">
+                                        <div class="invalid-feedback">
+                                            Valid first name is required.
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <label for="lastName" class="form-label"></label>
+                                        <input type="text" class="form-control" id="lastName" name="apellido" placeholder="Last name" value="" required="true"="">
+                                        <div class="invalid-feedback">
+                                            Valid last name is required.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row my-4 mx-auto">
+                                    <label for="username" class="form-label"></label>
+                                    <div class="input-group has-validation">
+                                        <span class="input-group has-validation">
+                                            <input type="text" class="form-control" id="username" name="usuario" placeholder="Username" required="true"="">
+                                            <div class="invalid-feedback">
+                                                Your username is required.
+                                            </div>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="row my-4 mx-auto">
+                                    <label for="password" class="form-label"></label>
+                                    <div class="input-group has-validation">
+                                        <span class="input-group has-validation">
+                                            <input type="password" class="form-control" id="password" name="contrasenia" placeholder="Password" required="true"="">
+                                            <div class="invalid-feedback">
+                                                Your Password is required.
+                                            </div>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class = "row my-4 mx-1">
+                                    <div class="col">
+                                        <div class="row"> <h5>Gender</h5> </div>
+                                            <input type="radio" id="male" name="sexo" value="male">
+                                            <label for="male">Male</label><br>
+                                            <input type="radio" id="female" name="sexo" value="female">
+                                            <label for="female">Female</label><br>
+                                            <input type="radio" id="other" name="sexo" value="other">
+                                            <label for="other">Other</label><br>
+                                            <div class="invalid-feedback">
+                                                Valid first name is required.
+                                            </div>
+                                    </div>
+                                    <div class="col text-end">
+                                        <div class="row text-end"> <h5>Birth Date</h5> </div>
+                                        <div class="col">
+                                            <label for="fecha"></label>
+                                            <input type="date" id="fecha" name="fecha_nacimiento">
+                                            <div class="invalid-feedback">
+                                                Valid first name is required.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row my-4 mx-3">
+                                    <label for="email" class="form-label"></label>
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Email: you@example.com">
+                                    <div class="invalid-feedback">
+                                        Please enter a valid email.
+                                    </div>
+                                </div>
+                                <div class="row my-4 mx-3">
+                                    <label for="comment" class="form-label"></label>
+                                    <textarea class="form-control" id="email" name="comentario" placeholder="Please add a comment about your opinion about the game"></textarea>
+                                    <div class="invalid-feedback">
+                                        Please enter a valid comment.
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-outline-light mt-2" type="submit">SIGN IN</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -167,7 +261,7 @@
             <div class="col">
                 <h2>Would you like to sign my petition?</h2>
                 <p class="text-center">Hi there, If you wanna express Sign here to let people know you love rain world the same as me!</p>
-                <div class="text-center"><a href="form.php"><button class="btn-1">Sign here</button></a></div>
+                <div class="text-center"><button style="font-size: 32px" type="button" class="btn-1" data-bs-toggle="modal" data-bs-target="#Login">Sign-in</button></div>
             </div>
             <div class="col">
                 <h2>Are you curious who is behind this website?</h2>
@@ -200,5 +294,9 @@
             <p class="text-center pb-4">Contact info: astorgadiego550@gmail.com</p>
         </div>
     </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
 </html>

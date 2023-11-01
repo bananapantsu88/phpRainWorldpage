@@ -134,7 +134,7 @@
     </div>
 
     <div class="container">
-        <form action="create.php" class="needs-validation" novalidate="" method="POST">
+        <form action="create.php" class="needs-validation" novalidate="" method="GET">
             <div class="row mx-auto">
                 <div class="col">
                     <label for="firstName" class="form-label"></label>
@@ -175,7 +175,7 @@
                 </div>
             </div>
 
-            <div class = "row my-4 mx-auto">
+            <div class = "row my-4 mx-2">
                 <div class="col">
                     <div class="row">
                         <div class="col"> <h5>Gender</h5> </div>

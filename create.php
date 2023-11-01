@@ -2,20 +2,21 @@
     include("connection.php");
     $connection = connect();
 
-    $name     = $_POST['nombre'];
-    $lname    = $_POST['apellido'];
-    $sex      = $_POST['sexo'];
-    $date     = $_POST['fecha_nacimiento'];
-    $email    = $_POST['email'];
-    $username = $_POST['usuario'];
-    $password = $_POST['contrasenia'];
-    $comment  = $_POST['comentario'];
+    $name     = $_GET['nombre'];
+    $lname    = $_GET['apellido'];
+    $sex      = $_GET['sexo'];
+    $date     = $_GET['fecha_nacimiento'];
+    $email    = $_GET['email'];
+    $username = $_GET['usuario'];
+    $password = $_GET['contrasenia'];
+    $comment  = $_GET['comentario'];
 
     $sql = "INSERT INTO usuarios (nombre, apellido, sexo, fecha_nacimiento, email, usuario, contrasenia, comentario) VALUES ('$name','$lname','$sex','$date','$email','$username','$password','$comment')";
     $query = mysqli_query($connection, $sql); 
     
     if ($query) {
-        Header ("Location: form.php");
+        Header ("Location: index.php");
     } else {
+        die("Unable to relocate" . mysqli_error($connection));
     }
 ?>
