@@ -23,7 +23,7 @@
             <div class="d-flex">
                 <div class="nav">
                     <a href="index.php" class="nav-link text-white">Home</a>
-                    <a href="who am I.html" class="nav-link text-white">Who am I</a>
+                    <a href="who am I.php" class="nav-link text-white">Who am I</a>
                 </div>
 <!--                <div class="text-end">
                     <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#Login">Login</button>
@@ -90,7 +90,7 @@
                             <textarea class="form-control" id="comment" name="comentario" placeholder="Please add a comment about your opinion about the game" required></textarea>
                         </div>
                         <div class="container text-center">
-                            <button class="btn btn-outline-light mt-2" type="submit">ADD</button>
+                            <button class="btn btn-outline-light mt-2" style="font-size: 24px" type="submit">ADD</button>
                         </div>
                     </form>
                 </div>
@@ -122,7 +122,7 @@
                     <div class = "col py-4 my-auto"><?php echo $row['contrasenia']     ?></div>
                     <div class = "col py-4 my-auto"><?php echo $row['comentario']      ?></div>
                     <div class = "col py-4 my-auto">
-                        <a href="update.php?id=<?php  echo $row['id']?>" class="btn btn-outline-light" style="font-size: 16px">Edit</a>
+                        <a href="actualizar.php?id=<?php  echo $row['id']?>" class="btn btn-outline-light" style="font-size: 16px">Edit</a>
                         <a href="delete.php?id=<?php  echo $row['id']?>" class="btn btn-outline-light"  style="font-size: 16px">Delete</a>
                     </div>
                 </div>

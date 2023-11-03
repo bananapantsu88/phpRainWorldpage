@@ -38,7 +38,7 @@
             <div class="d-flex">
                 <div class="nav">
                     <a href="index.php" class="nav-link text-white">Home</a>
-                    <a href="who am I.html" class="nav-link text-white">Who am I</a>
+                    <a href="who am I.php" class="nav-link text-white">Who am I</a>
                 </div>
                 <div class="text-end">
                     <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#Login">Login</button>
