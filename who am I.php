@@ -49,34 +49,97 @@
     </nav>
     
     <!-- Modal -->
-    <div class="modal fade" id="Login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="color: white">
+    <div class="modal fade" id="Login" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true" style="color: white">
         <div class="modal-dialog">
-            <div class="modal-content"  style="background-color: #222;">
+            <div class="modal-content" style="background-color: #222;">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel"> Login </h1>
-                    <button type="button" class="btn-close white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel"> Register your info </h1>
+                    <button type="button" class="btn-close white" aria-label="Close" data-bs-dismiss="modal"></button>
                 </div>
+                <ul class="nav text-center py-2" id="myTabs" role="tablist" style="border-bottom: white solid 1px;">
+                    <li class="nav-item col">
+                        <a class="nav-link active" style="color: white;" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Login</a>
+                    </li>
+                    <li class="nav-item col">
+                        <a class="nav-link" style="color: white;" id="sign-in-tab" data-toggle="tab" href="#sign-in" role="tab" aria-controls="sign-in" aria-selected="false">Sign In</a>
+                    </li>
+                </ul>
+
                 <div class="modal-body">
-                    <form action="#" method="post">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col">
-                                    <label for="username" class="form-label"></label>
-                                    <input type="text" class="form-control" id="username" placeholder="Username*" required="">
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                            <form action="login.php" method="POST">
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="username" class="form-label"></label>
+                                        <input type="text" class="form-control" id="username" name="usuario" placeholder="Username*" required>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col">
-                                    <label for="password" class="form-label"></label>
-                                    <input type="password" class="form-control" id="password" placeholder="Password*" required="">
+                                <div class="row mb-4 pb-3">
+                                    <div class="col">
+                                        <label for="password" class="form-label"></label>
+                                        <input type="password" class="form-control" id="password" name="contrasenia" placeholder="Password*" required>
+                                    </div>
                                 </div>
-                            </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-outline-light mt-2">Log in</button>
+                                </div>
+                            </form>
                         </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-light mt-2" data-bs-dismiss="modal">Log in</button>
-                    <a href="form.php"><button type="button" class="btn btn-outline-light">Sign-up</button></a>
+                        <div class="tab-pane fade" id="sign-in" role="tabpanel" aria-labelledby="sign-in-tab">
+                            <form action="create.php" class="needs-validation" method="GET">
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="firstName" class="form-label"></label>
+                                        <input type="text" class="form-control" id="firstName" name="nombre" placeholder="First name" required>
+                                    </div>
+                                    <div class="col">
+                                        <label for="lastName" class="form-label"></label>
+                                        <input type="text" class="form-control" id="lastName" name="apellido" placeholder="Last name" required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="Username" class="form-label"></label>
+                                        <input type="text" class="form-control" id="Username" name="usuario" placeholder="Username" required>
+                                    </div>
+                                    <div class="col">
+                                        <label for="Password" class="form-label"></label>
+                                        <input type="password" class="form-control" id="Password" name="contrasenia" placeholder="Password" required>
+                                    </div>
+                                </div>
+                                <div class = "row my-4 mx-1">
+                                    <div class="col">
+                                    <div class="row"> <h5>Gender</h5> </div>
+                                        <input type="radio" id="male" name="sexo" value="male">
+                                        <label for="male">Male</label><br>
+                                        <input type="radio" id="female" name="sexo" value="female">
+                                        <label for="female">Female</label><br>
+                                        <input type="radio" id="other" name="sexo" value="other">
+                                        <label for="other">Other</label><br>
+                                    </div>
+                                    <div class="col text-end">
+                                        <div class="row text-end"> <h5>Birth Date</h5> </div>
+                                        <div class="col">
+                                            <label for="fecha"></label>
+                                            <input type="date" id="fecha" name="fecha_nacimiento" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row my-4 mx-1">
+                                    <label for="email" class="form-label"></label>
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Email: you@example.com" required>
+                                </div>
+                                <div class="row my-4 mx-1">
+                                    <label for="comment" class="form-label"></label>
+                                    <textarea class="form-control" id="comment" name="comentario" placeholder="Please add a comment about your opinion about the game" required></textarea>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-outline-light mt-2" type="submit">SIGN IN</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -53,7 +53,7 @@
             <div class="modal-content" style="background-color: #222;">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="exampleModalLabel"> Register your info </h1>
-                    <button type="button" class="btn-close white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close white" aria-label="Close" data-bs-dismiss="modal"></button>
                 </div>
                 <ul class="nav text-center py-2" id="myTabs" role="tablist" style="border-bottom: white solid 1px;">
                     <li class="nav-item col">
@@ -67,7 +67,7 @@
                 <div class="modal-body">
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
-                            <form action="login.php" method="get">
+                            <form action="login.php" method="POST">
                                 <div class="row">
                                     <div class="col">
                                         <label for="username" class="form-label"></label>
@@ -86,83 +86,52 @@
                             </form>
                         </div>
                         <div class="tab-pane fade" id="sign-in" role="tabpanel" aria-labelledby="sign-in-tab">
-                            <form action="create.php" class="needs-validation" novalidate="" method="GET">
-                                <div class="row mx-auto">
+                            <form action="create_form.php" class="needs-validation" method="POST">
+                                <div class="row">
                                     <div class="col">
                                         <label for="firstName" class="form-label"></label>
-                                        <input type="text" class="form-control" id="firstName" name="nombre" placeholder="First name" value="" required="true">
-                                        <div class="invalid-feedback">
-                                            Valid first name is required.
-                                        </div>
+                                        <input type="text" class="form-control" id="firstName" name="nombre" placeholder="First name" required>
                                     </div>
                                     <div class="col">
                                         <label for="lastName" class="form-label"></label>
-                                        <input type="text" class="form-control" id="lastName" name="apellido" placeholder="Last name" value="" required="true"="">
-                                        <div class="invalid-feedback">
-                                            Valid last name is required.
-                                        </div>
+                                        <input type="text" class="form-control" id="lastName" name="apellido" placeholder="Last name" required>
                                     </div>
                                 </div>
-                                <div class="row my-4 mx-auto">
-                                    <label for="username" class="form-label"></label>
-                                    <div class="input-group has-validation">
-                                        <span class="input-group has-validation">
-                                            <input type="text" class="form-control" id="username" name="usuario" placeholder="Username" required="true"="">
-                                            <div class="invalid-feedback">
-                                                Your username is required.
-                                            </div>
-                                        </span>
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="Username" class="form-label"></label>
+                                        <input type="text" class="form-control" id="Username" name="usuario" placeholder="Username" required>
                                     </div>
-                                </div>
-
-                                <div class="row my-4 mx-auto">
-                                    <label for="password" class="form-label"></label>
-                                    <div class="input-group has-validation">
-                                        <span class="input-group has-validation">
-                                            <input type="password" class="form-control" id="password" name="contrasenia" placeholder="Password" required="true"="">
-                                            <div class="invalid-feedback">
-                                                Your Password is required.
-                                            </div>
-                                        </span>
+                                    <div class="col">
+                                        <label for="Password" class="form-label"></label>
+                                        <input type="password" class="form-control" id="Password" name="contrasenia" placeholder="Password" required>
                                     </div>
                                 </div>
                                 <div class = "row my-4 mx-1">
                                     <div class="col">
-                                        <div class="row"> <h5>Gender</h5> </div>
-                                            <input type="radio" id="male" name="sexo" value="male">
-                                            <label for="male">Male</label><br>
-                                            <input type="radio" id="female" name="sexo" value="female">
-                                            <label for="female">Female</label><br>
-                                            <input type="radio" id="other" name="sexo" value="other">
-                                            <label for="other">Other</label><br>
-                                            <div class="invalid-feedback">
-                                                Valid first name is required.
-                                            </div>
+                                    <div class="row"> <h5>Gender</h5> </div>
+                                        <input type="radio" id="male" name="sexo" value="male">
+                                        <label for="male">Male</label><br>
+                                        <input type="radio" id="female" name="sexo" value="female">
+                                        <label for="female">Female</label><br>
+                                        <input type="radio" id="other" name="sexo" value="other">
+                                        <label for="other">Other</label><br>
                                     </div>
                                     <div class="col text-end">
                                         <div class="row text-end"> <h5>Birth Date</h5> </div>
                                         <div class="col">
                                             <label for="fecha"></label>
-                                            <input type="date" id="fecha" name="fecha_nacimiento">
-                                            <div class="invalid-feedback">
-                                                Valid first name is required.
-                                            </div>
+                                            <input type="date" id="fecha" name="fecha_nacimiento" required>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row my-4 mx-3">
+                                <div class="row my-4 mx-1">
                                     <label for="email" class="form-label"></label>
-                                    <input type="email" class="form-control" id="email" name="email" placeholder="Email: you@example.com">
-                                    <div class="invalid-feedback">
-                                        Please enter a valid email.
-                                    </div>
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Email: you@example.com" required>
                                 </div>
-                                <div class="row my-4 mx-3">
+                                <div class="row my-4 mx-1">
                                     <label for="comment" class="form-label"></label>
-                                    <textarea class="form-control" id="email" name="comentario" placeholder="Please add a comment about your opinion about the game"></textarea>
-                                    <div class="invalid-feedback">
-                                        Please enter a valid comment.
-                                    </div>
+                                    <textarea class="form-control" id="comment" name="comentario" placeholder="Please add a comment about your opinion about the game" required></textarea>
                                 </div>
                                 <div class="modal-footer">
                                     <button class="btn btn-outline-light mt-2" type="submit">SIGN IN</button>

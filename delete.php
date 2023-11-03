@@ -1,5 +1,13 @@
 <?php
+    include("connection.php");
     $connection = connect();
 
-    mysqli_query($conection,"DELETE FROM usuarios WHERE id = '$id'");
+    $id = $_GET['id'];
+
+    $sql = "DELETE FROM usuarios WHERE id = '$id'";
+    $query = mysqli_query($connection, $sql);
+
+    if ($query) {
+        Header("Location: control_panel.php");
+    }
 ?>

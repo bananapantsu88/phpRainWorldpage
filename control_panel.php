@@ -4,8 +4,6 @@
 
     $sql = "SELECT * FROM usuarios";
     $query = mysqli_query($connection, $sql);
-
-#       $row = mysqli_fetch_array($query);
 ?>
 
 <!DOCTYPE html>
@@ -27,47 +25,12 @@
                     <a href="index.php" class="nav-link text-white">Home</a>
                     <a href="who am I.html" class="nav-link text-white">Who am I</a>
                 </div>
-                <div class="text-end">
+<!--                <div class="text-end">
                     <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#Login">Login</button>
                 </div>
-            </div>
+-->            </div>
         </div>
     </nav>
-
-    <!-- Modal -->
-    <div class="modal fade" id="Login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="color: white">
-        <div class="modal-dialog">
-            <div class="modal-content"  style="background-color: #222;">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel"> Login </h1>
-                    <button type="button" class="btn-close white" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form action="#" method="post">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col">
-                                    <label for="username" class="form-label"></label>
-                                    <input type="text" class="form-control" id="username" placeholder="Username*" required="">
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col">
-                                    <label for="password" class="form-label"></label>
-                                    <input type="password" class="form-control" id="password" placeholder="Password*" required="">
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-light mt-2" data-bs-dismiss="modal">Log in</button>
-                    <a href="form.php"><button type="button" class="btn btn-outline-light">Sign-up</button></a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End of Modal -->
     
     <div class="container my-4 text-center">
         <h5>Hear this to focus!</h5>
@@ -76,38 +39,98 @@
 
     <div class="container-fluid mt-4 text-center" style="background-color: #111; border: solid 10px #222">
         <div class="row">
-            <div class="col py-4" style=" border-bottom: solid 10px #222"><h5>Id        </h5></div>
-            <div class="col py-4" style=" border-bottom: solid 10px #222"><h5>Name      </h5></div>
-            <div class="col py-4" style=" border-bottom: solid 10px #222"><h5>Last Name </h5></div>
-            <div class="col py-4" style=" border-bottom: solid 10px #222"><h5>Sex       </h5></div>
-            <div class="col py-4" style=" border-bottom: solid 10px #222"><h5>Birth Date</h5></div>
-            <div class="col py-4" style=" border-bottom: solid 10px #222"><h5>Email     </h5></div>
-            <div class="col py-4" style=" border-bottom: solid 10px #222"><h5>User Name </h5></div>
-            <div class="col py-4" style=" border-bottom: solid 10px #222"><h5>Password  </h5></div>
-            <div class="col py-4" style=" border-bottom: solid 10px #222"><h5>Comment   </h5></div>
-            <div class="col py-4" style=" border-bottom: solid 10px #222"><h5>Options   </h5></div>
-        </div>
-        <?php
-            while($row = mysqli_fetch_array($query)){
-        ?>
-        <div class = "row">
-            <div class = "col py-4"><?php echo $row['id']              ?></div>
-            <div class = "col py-4"><?php echo $row['nombre']          ?></div>
-            <div class = "col py-4"><?php echo $row['apellido']        ?></div>
-            <div class = "col py-4"><?php echo $row['sexo']            ?></div>
-            <div class = "col py-4"><?php echo $row['fecha_nacimiento']?></div>
-            <div class = "col py-4"><?php echo $row['email']           ?></div>
-            <div class = "col py-4"><?php echo $row['usuario']         ?></div>
-            <div class = "col py-4"><?php echo $row['contrasenia']     ?></div>
-            <div class = "col py-4"><?php echo $row['comentario']      ?></div>
-            <div class = "col py-4">
-                <a href="update.php?id=<?php  echo $row['id']?>" class="btn btn-outline-light" style="font-size: 16px">Edit</a>
-                <a href="delete.php?id=<?php  echo $row['id']?>" class="btn btn-outline-light"  style="font-size: 16px">Delete</a>
+            <div class="col-md-3" style="border-right: solid 10px #222">
+                <div class="row" style=" border-bottom: solid 10px #222"><h5 class="py-4">FORM</h5></div>
+                <div class="row pb-4">
+                    <form action="create_panel.php" class="needs-validation" method="GET">
+                        <div class="row">
+                            <div class="col">
+                                <label for="firstName" class="form-label"></label>
+                                <input type="text" class="form-control" id="firstName" name="nombre" placeholder="First name" required>
+                            </div>
+                            <div class="col">
+                                <label for="lastName" class="form-label"></label>
+                                <input type="text" class="form-control" id="lastName" name="apellido" placeholder="Last name" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label for="Username" class="form-label"></label>
+                                <input type="text" class="form-control" id="Username" name="usuario" placeholder="Username" required>
+                            </div>
+                            <div class="col">
+                                <label for="Password" class="form-label"></label>
+                                <input type="password" class="form-control" id="Password" name="contrasenia" placeholder="Password" required>
+                            </div>
+                        </div>
+                        <div class = "row my-4 mx-1">
+                            <div class="col">
+                            <div class="row"> <h5>Gender</h5> </div>
+                                <input type="radio" id="male" name="sexo" value="male">
+                                <label for="male">Male</label><br>
+                                <input type="radio" id="female" name="sexo" value="female">
+                                <label for="female">Female</label><br>
+                                <input type="radio" id="other" name="sexo" value="other">
+                                <label for="other">Other</label><br>
+                            </div>
+                            <div class="col text-end">
+                                <div class="row text-end"> <h5>Birth Date</h5> </div>
+                                <div class="col">
+                                    <label for="fecha"></label>
+                                    <input type="date" id="fecha" name="fecha_nacimiento" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row my-4 mx-1">
+                            <label for="email" class="form-label"></label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Email: you@example.com" required>
+                        </div>
+                        <div class="row my-4 mx-1">
+                            <label for="comment" class="form-label"></label>
+                            <textarea class="form-control" id="comment" name="comentario" placeholder="Please add a comment about your opinion about the game" required></textarea>
+                        </div>
+                        <div class="container text-center">
+                            <button class="btn btn-outline-light mt-2" type="submit">ADD</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="row my-auto">
+                    <div class="col py-4" style=" border-bottom: solid 10px #222"><h5>Id        </h5></div>
+                    <div class="col py-4" style=" border-bottom: solid 10px #222"><h5>Name      </h5></div>
+                    <div class="col py-4" style=" border-bottom: solid 10px #222"><h5>Last Name </h5></div>
+                    <div class="col py-4" style=" border-bottom: solid 10px #222"><h5>Sex       </h5></div>
+                    <div class="col py-4" style=" border-bottom: solid 10px #222"><h5>Birth Date</h5></div>
+                    <div class="col py-4" style=" border-bottom: solid 10px #222"><h5>Email     </h5></div>
+                    <div class="col py-4" style=" border-bottom: solid 10px #222"><h5>User Name </h5></div>
+                    <div class="col py-4" style=" border-bottom: solid 10px #222"><h5>Password  </h5></div>
+                    <div class="col py-4" style=" border-bottom: solid 10px #222"><h5>Comment   </h5></div>
+                    <div class="col py-4" style=" border-bottom: solid 10px #222"><h5>Options   </h5></div>
+                </div>
+                <?php
+                    while($row = mysqli_fetch_array($query)) {
+                ?>
+                <div class = "row" style="border-bottom: solid 10px #222">
+                    <div class = "col py-4 my-auto"><?php echo $row['id']              ?></div>
+                    <div class = "col py-4 my-auto"><?php echo $row['nombre']          ?></div>
+                    <div class = "col py-4 my-auto"><?php echo $row['apellido']        ?></div>
+                    <div class = "col py-4 my-auto"><?php echo $row['sexo']            ?></div>
+                    <div class = "col py-4 my-auto"><?php echo $row['fecha_nacimiento']?></div>
+                    <div class = "col py-4 my-auto"><?php echo $row['email']           ?></div>
+                    <div class = "col py-4 my-auto"><?php echo $row['usuario']         ?></div>
+                    <div class = "col py-4 my-auto"><?php echo $row['contrasenia']     ?></div>
+                    <div class = "col py-4 my-auto"><?php echo $row['comentario']      ?></div>
+                    <div class = "col py-4 my-auto">
+                        <a href="update.php?id=<?php  echo $row['id']?>" class="btn btn-outline-light" style="font-size: 16px">Edit</a>
+                        <a href="delete.php?id=<?php  echo $row['id']?>" class="btn btn-outline-light"  style="font-size: 16px">Delete</a>
+                    </div>
+                </div>
+                <?php
+                    }
+                ?>
             </div>
         </div>
-        <?php
-            }
-        ?>
     </div>
 </body>
 </html>

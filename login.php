@@ -2,8 +2,8 @@
     include("connection.php");
     $connection = connect();
 
-    $username = $_GET['usuario'];
-    $password = $_GET['contrasenia'];
+    $username = $_POST['usuario'];
+    $password = $_POST['contrasenia'];
 
     if ($username === "bananapantsu88" && $password === "diego123") {    
         $sql = "SELECT * FROM usuarios WHERE usuario = 'bananapantsu88' AND contrasenia = 'diego123'";

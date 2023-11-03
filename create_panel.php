@@ -15,7 +15,7 @@
     $query = mysqli_query($connection, $sql); 
     
     if ($query) {
-        Header ("Location: index.php");
+        Header ("Location: control_panel.php");
     } else {
         die("Unable to relocate" . mysqli_error($connection));
     }
